@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: books
+#
+#  id         :integer          not null, primary key
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  series_id  :integer          not null
+#  user_id    :integer
+#
+# Indexes
+#
+#  index_books_on_series_id  (series_id)
+#  index_books_on_user_id    (user_id)
+#
+# Foreign Keys
+#
+#  series_id  (series_id => series.id)
+#  user_id    (user_id => users.id)
+#
+
+one:
+  name: MyString
+  author: one
+  categories: one
+  series: one
+  user: one
+
+two:
+  name: MyString
+  author: two
+  categories: two
+  series: two
+  user: two
