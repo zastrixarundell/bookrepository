@@ -20,7 +20,7 @@ class Book < ApplicationRecord
   has_many :book_author_connections
   has_many :authors, through: :book_author_connections
 
-  has_one :series
+  belongs_to :series
 
   def author=(author)
     update(authors: [author])
