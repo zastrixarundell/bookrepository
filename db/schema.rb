@@ -10,21 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_14_111551) do
+ActiveRecord::Schema.define(version: 2020_10_14_125739) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "book_author_connections", force: :cascade do |t|
-    t.integer "book_id", null: false
-    t.integer "author_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["author_id"], name: "index_book_author_connections_on_author_id"
-    t.index ["book_id"], name: "index_book_author_connections_on_book_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -35,8 +26,28 @@ ActiveRecord::Schema.define(version: 2020_10_14_111551) do
     t.index ["series_id"], name: "index_books_on_series_id"
   end
 
+  create_table "books_authors", force: :cascade do |t|
+    t.integer "book_id", null: false
+    t.integer "author_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_books_authors_on_author_id"
+    t.index ["book_id", "author_id"], name: "index_books_authors_on_book_id_and_author_id", unique: true
+    t.index ["book_id"], name: "index_books_authors_on_book_id"
+  end
+
+  create_table "books_categories", force: :cascade do |t|
+    t.integer "book_id", null: false
+    t.integer "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id", "category_id"], name: "index_books_categories_on_book_id_and_category_id", unique: true
+    t.index ["book_id"], name: "index_books_categories_on_book_id"
+    t.index ["category_id"], name: "index_books_categories_on_category_id"
+  end
+
   create_table "categories", force: :cascade do |t|
-    t.string "type", null: false
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -56,7 +67,9 @@ ActiveRecord::Schema.define(version: 2020_10_14_111551) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "book_author_connections", "authors"
-  add_foreign_key "book_author_connections", "books"
   add_foreign_key "books", "series"
+  add_foreign_key "books_authors", "authors"
+  add_foreign_key "books_authors", "books"
+  add_foreign_key "books_categories", "books"
+  add_foreign_key "books_categories", "categories"
 end

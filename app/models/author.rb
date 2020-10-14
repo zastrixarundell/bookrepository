@@ -8,6 +8,5 @@
 #  updated_at :datetime         not null
 #
 class Author < ApplicationRecord
-  has_many :book_author_connections
-  has_many :books, through: :book_author_connections
+  has_many :books, join_table: :books_authors
 end
