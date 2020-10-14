@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: book_author_connections
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  author_id  :integer          not null
+#  book_id    :integer          not null
+#
+# Indexes
+#
+#  index_book_author_connections_on_author_id  (author_id)
+#  index_book_author_connections_on_book_id    (book_id)
+#
+# Foreign Keys
+#
+#  author_id  (author_id => authors.id)
+#  book_id    (book_id => books.id)
+#
+
+one:
+  book: one
+  author: one
+
+two:
+  book: two
+  author: two

@@ -6,7 +6,7 @@
 #  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  series_id  :integer          not null
+#  series_id  :integer
 #
 # Indexes
 #
