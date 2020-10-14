@@ -9,5 +9,5 @@
 #
 class Author < ApplicationRecord
   has_and_belongs_to_many :books, join_table: :books_authors
-  has_many :series, through: :books
+  has_many :series, -> { distinct }, through: :books
 end

@@ -24,7 +24,6 @@ class SeriesDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   books
   authors
-  id
   name
   ].freeze
 
@@ -33,7 +32,6 @@ class SeriesDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   books
   authors
-  id
   name
   created_at
   updated_at
@@ -43,8 +41,6 @@ class SeriesDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  books
-  authors
   name
   ].freeze
 
@@ -63,7 +59,7 @@ class SeriesDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how series are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(series)
-  #   "Series ##{series.id}"
-  # end
+  def display_resource(series)
+    series.name
+  end
 end

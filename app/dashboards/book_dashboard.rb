@@ -24,9 +24,10 @@ class BookDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
+  name
+  series
   authors
   categories
-  series
   user
   ].freeze
 
@@ -37,7 +38,6 @@ class BookDashboard < Administrate::BaseDashboard
   categories
   series
   user
-  id
   name
   created_at
   updated_at
@@ -47,11 +47,11 @@ class BookDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+  name
   authors
   categories
   series
   user
-  name
   ].freeze
 
   # COLLECTION_FILTERS
@@ -69,7 +69,7 @@ class BookDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how books are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(book)
-  #   "Book ##{book.id}"
-  # end
+  def display_resource(book)
+    book.name
+  end
 end
