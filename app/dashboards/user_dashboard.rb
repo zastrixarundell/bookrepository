@@ -8,7 +8,7 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    book: Field::HasOne,
+    books: Field::HasMany,
     id: Field::Number,
     name: Field::String,
     surname: Field::String,
@@ -24,7 +24,7 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    book
+    books
     name
     surname
     nickname
@@ -33,7 +33,7 @@ class UserDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    book
+    books
     name
     surname
     nickname
@@ -62,7 +62,10 @@ class UserDashboard < Administrate::BaseDashboard
   #   COLLECTION_FILTERS = {
   #     open: ->(resources) { resources.where(open: true) }
   #   }.freeze
-  COLLECTION_FILTERS = {}.freeze
+  COLLECTION_FILTERS = {
+    borrowed: ->(resources) { resources.borrowed },
+    free: ->(resources) { resources.free }
+  }.freeze
 
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.

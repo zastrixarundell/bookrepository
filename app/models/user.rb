@@ -11,5 +11,8 @@
 #  updated_at :datetime         not null
 #
 class User < ApplicationRecord
-  has_one :book, required: false
+  has_many :books, dependent: :nullify
+
+  scope :borrowed, -> { joins(:books).distinct }
+  scope :free,     -> { left_joins(:books).where('books.user_id IS NULL') }
 end
