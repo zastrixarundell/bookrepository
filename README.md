@@ -1,6 +1,8 @@
 # Book Repository
 
-This is a simple webapp which I personally use to see all of the books I have. It always shows the count and the price of all of the books I've bought, the series which they belong to, etc. 
+This is a simple webapp which I personally use to see all of the books I have. It always shows the count and the price of all of the books I've bought, the series which they belong to, etc.
+
+It shows all of the data with the administrate panel.
 
 Unlike a specific website (\*khm\* bookdepo- ... \*khm\*) it supports multiple induviduals authors when they've written a specific book, huzzah!
 
@@ -17,6 +19,11 @@ The only thing which is needed to be setup out of the standard Rails commands is
 
 As to not create bad data, I have not implemented functionality to automatically create authors, series and categories when you create a book. You will need to make sure all of the wanted categories, authors and series exist before you try to add a book to the database.
 
+## Screenshot
+
+![Books page](https://raw.githubusercontent.com/zastrixarundell/bookrepository/main/github_assets/screenshot.png)
+
 ## TODOs
 
-Use Devise for auth rather than basic auth.
+* Add images how this looks like.
+* Use Devise for auth rather than basic auth.
