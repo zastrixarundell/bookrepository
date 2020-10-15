@@ -40,10 +40,10 @@ class Book < ApplicationRecord
   #  end
   # end
 
-  # def series=(new_series)
-  #  super(new_series) if new_series.instance_of? Series
-  #  super(Series.find_or_create_by(name: new_series)) if new_series.instance_of? String
-  # end
+  def series=(new_series)
+    super(new_series) if new_series.instance_of? Series
+    super(Series.find_or_create_by(name: new_series)) if new_series.instance_of? String
+  end
 
   # def categories=(to_add)
   #   to_add = [to_add] unless to_add.instance_of? Array
