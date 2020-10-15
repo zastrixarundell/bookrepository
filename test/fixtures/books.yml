@@ -2,13 +2,14 @@
 #
 # Table name: books
 #
-#  id         :integer          not null, primary key
-#  name       :string           not null
-#  price      :float            default(0.0)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  series_id  :integer
-#  user_id    :integer
+#  id               :integer          not null, primary key
+#  alternative_name :string
+#  name             :string           not null
+#  price            :float            default(0.0)
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  series_id        :integer
+#  user_id          :integer
 #
 # Indexes
 #
