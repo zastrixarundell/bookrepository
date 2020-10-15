@@ -16,6 +16,7 @@ class BookDashboard < Administrate::BaseDashboard
     name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    price: Field::Number
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -29,16 +30,18 @@ class BookDashboard < Administrate::BaseDashboard
   authors
   categories
   user
+  price
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+  name
   authors
   categories
   series
   user
-  name
+  price
   created_at
   updated_at
   ].freeze
@@ -51,6 +54,7 @@ class BookDashboard < Administrate::BaseDashboard
   authors
   categories
   series
+  price
   user
   ].freeze
 

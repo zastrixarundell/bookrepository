@@ -4,6 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string           not null
+#  price      :float            default(0.0)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  series_id  :integer

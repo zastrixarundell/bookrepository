@@ -24,7 +24,7 @@ It renders the `_table` partial to display details about the resources.
 %>
 
 <% content_for(:title) do %>
-  <%= "#{display_resource_name(page.resource_name)} (#{resources.count})" %>
+  <%= "#{display_resource_name(page.resource_name)} (#{resources.count} / #{resources.unscoped.count}) -- #{resources.unscoped.distinct.sum(:price)}€" %>
 <% end %>
 
 <header class="main-content__header" role="banner">
