@@ -8,7 +8,10 @@ class BookDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    authors: Field::HasMany,
+    authors: Field::HasMany.with_options(
+      searchable: true,
+      searchable_fields: ['name']
+    ),
     categories: Field::HasMany,
     series: Field::BelongsTo,
     user: Field::BelongsTo,
