@@ -1,0 +1,1 @@
+CREATE USER book_repository_development SUPERUSER;
