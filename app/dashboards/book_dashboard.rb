@@ -25,37 +25,37 @@ class BookDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  name
-  series
-  authors
-  categories
-  user
-  price
+    name
+    series
+    authors
+    categories
+    price
+    user
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  name
-  authors
-  categories
-  series
-  user
-  price
-  created_at
-  updated_at
+    name
+    authors
+    categories
+    series
+    user
+    price
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  name
-  authors
-  categories
-  series
-  price
-  user
+    name
+    authors
+    categories
+    series
+    price
+    user
   ].freeze
 
   # COLLECTION_FILTERS

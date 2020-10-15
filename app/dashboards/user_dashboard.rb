@@ -68,6 +68,10 @@ class UserDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(user)
-    "#{user.name} #{user.surname} (#{user.nickname})"
+    if user.nickname.present?
+      "#{user.name} #{user.surname} (#{user.nickname})"
+    else
+      "#{user.name} #{user.surname}"
+    end
   end
 end
