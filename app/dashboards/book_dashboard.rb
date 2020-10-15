@@ -75,7 +75,9 @@ class BookDashboard < Administrate::BaseDashboard
   #   COLLECTION_FILTERS = {
   #     open: ->(resources) { resources.where(open: true) }
   #   }.freeze
-  COLLECTION_FILTERS = {}.freeze
+  COLLECTION_FILTERS = {
+    borrowed: ->(resources) { resources.borrowed }
+  }.freeze
 
   # Overwrite this method to customize how books are displayed
   # across all pages of the admin dashboard.

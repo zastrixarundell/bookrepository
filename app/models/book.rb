@@ -28,6 +28,8 @@ class Book < ApplicationRecord
   belongs_to :series, optional: true
   belongs_to :user, optional: true
 
+  scope :borrowed, -> { where.not(user: nil) }
+
   # def authors=(authors)
   #  authors = [authors] unless authors.instance_of? Array
   #
