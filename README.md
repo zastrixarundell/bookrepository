@@ -25,5 +25,4 @@ As to not create bad data, I have not implemented functionality to automatically
 
 ## TODOs
 
-* Add images how this looks like.
 * Use Devise for auth rather than basic auth.
