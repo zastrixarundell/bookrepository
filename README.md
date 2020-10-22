@@ -10,7 +10,7 @@ Unlike a specific website (\*khm\* bookdepo- ... \*khm\*) it supports multiple i
 
 The only thing which is needed to be setup out of the standard Rails commands is just to set the environment variables.
 
-If you're in development or test mode, you can just edit the `config/application.yml` provided by the [figaro](https://github.com/laserlemon/figaro) gem. There is an `config/application.yml.bak` file you should copy without the `bak` extension and just edit the variables there with the ones you want to use. 
+If you're in development or test mode, you can just edit the `config/application.yml` provided by the [figaro](https://github.com/laserlemon/figaro) gem. There is an `config/application.yml.bak` file you should copy without the `bak` extension and just edit the variables there with the ones you want to use.
 
 It is preferred that you use normal variables when runing in production though...
 
