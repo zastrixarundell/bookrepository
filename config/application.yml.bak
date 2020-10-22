@@ -1,0 +1,6 @@
+# Add simple system env. variables for production and development
+
+ADMIN_USERNAME: 'username'
+ADMIN_PASSWORD: 'password'
+DATABASE_USERNAME: 'postgres'
+DATABASE_USERNAME: 'postgres'
