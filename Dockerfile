@@ -1,5 +1,5 @@
 # Use Ruby 2.7.1
-FROM ruby:2.7.1
+FROM ruby:3.3.4
 
 # Directory where everything is stored
 WORKDIR /code
