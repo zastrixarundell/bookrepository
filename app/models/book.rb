@@ -2,7 +2,7 @@
 #
 # Table name: books
 #
-#  id               :integer          not null, primary key
+#  id               :bigint           not null, primary key
 #  alternative_name :string
 #  name             :string           not null
 #  price            :float            default(0.0)
@@ -18,8 +18,8 @@
 #
 # Foreign Keys
 #
-#  series_id  (series_id => series.id)
-#  user_id    (user_id => users.id)
+#  fk_rails_...  (series_id => series.id)
+#  fk_rails_...  (user_id => users.id)
 #
 class Book < ApplicationRecord
   has_and_belongs_to_many :authors, join_table: :books_authors
