@@ -7,6 +7,8 @@ WORKDIR /code
 # Cope all of the application files to code
 COPY . /code
 
+ENV RAILS_ENV=production
+
 # Install all of the required dependencies
 RUN bundle install
 
